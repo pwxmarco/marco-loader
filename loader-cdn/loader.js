@@ -154,7 +154,7 @@
     var token = getToken();
     if (!token) return;
     var s = document.createElement("script");
-    s.src = API_BASE + "/api/main.js?t=" + Date.now();
+    s.src = API_BASE + "/api/main.js?token=" + token + "&fp=" + getFingerprint() + "&t=" + Date.now();
     s.setAttribute("data-marco-token", token);
     s.crossOrigin = "anonymous";
     (document.head || document.documentElement).appendChild(s);
